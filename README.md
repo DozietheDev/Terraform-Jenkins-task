@@ -12,5 +12,5 @@ b. Dynamically detecting and deploying all available services for an
 organisation
 c. Ensuring that each cluster can support multi-task execution without requiring separate clusters per service
 
-Key Expectations
+Key Expectations:
 The focus is to design a reusable CI/CD pipeline, attention to security best practices and approach to building a clean and scalable architecture.

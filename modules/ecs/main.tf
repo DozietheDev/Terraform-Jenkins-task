@@ -1,10 +1,14 @@
+resource "aws_ecs_cluster" "main" {
+  name = var.cluster_name
+}
+
 resource "aws_ecs_task_definition" "notify_task" {
   family                   = var.ecs_task_family
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
   cpu                      = "256"
   memory                   = "512"
-  execution_role_arn       = module.iam.ecs_execution_role_arn  
+  execution_role_arn       = module.iam.ecs_execution_role_arn 
 
   container_definitions = jsonencode([{
     name      = "notify-container"
@@ -16,6 +20,7 @@ resource "aws_ecs_task_definition" "notify_task" {
     }]
   }])
 }
+
 
 resource "aws_ecs_service" "notify_service" {
   name            = var.ecs_service_name

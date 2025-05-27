@@ -3,10 +3,10 @@ pipeline {
 
   environment {
     AWS_REGION       = 'us-east-1'
-    ECR_REPO_PREFIX  = 'myorg'
+    ECR_REPO_PREFIX  = 'myorgn'
     CLUSTER_NAME     = 'notify-cluster'
     AWS_CREDENTIALS  = credentials('aws-credentials-id') // Jenkins IAM user with least privilege
-    AWS_ACCOUNT_ID   = '123456789012' // replace with your AWS Account ID or inject as a secret/env var
+    AWS_ACCOUNT_ID   = '123456789012' // replace with AWS Account ID or inject as a secret
   }
 
   stages {
